@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f463c" />
+    <meta name="description"
+        content="Profil Desa Pasirjati - KKN Pasirjati 02/2026 Universitas Muhammadiyah Bandung. Informasi geografis, demografis, potensi, dan struktur pemerintahan desa." />
+    <title>Profile Desa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --forest: #1f463c;
+            --forest-2: #16372e;
+            --cream: #f5efe4;
+            --paper: #fffaf2;
+            --ink: #26312d;
+            --muted: #77746b;
+            --line: #ddd3c2;
+            --saffron: #e8a33a;
+            --terra: #b76342;
+            --ease: cubic-bezier(.23, 1, .32, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            cursor: pointer;
+            font: inherit;
+            border: none;
+            background: none;
+        }
+
+        .wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        /* ========== HEADER ========== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(245, 239, 228, .95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .header-inner {
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--forest);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-size: .9rem;
+            font-weight: 600;
+            color: #5f675e;
+            transition: color .2s;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--forest);
+        }
+
+        .nav-link.active {
+            color: var(--forest);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--saffron);
+            border-radius: 3px;
+        }
+
+        /* ========== PAGE HERO ========== */
+        .page-hero {
+            background-image: linear-gradient(rgba(22, 55, 46, .72), rgba(22, 55, 46, .72)),
+                url('images/profiledesa/desa.png');
+            background-position: center;
+            background-size: cover;
+            color: var(--paper);
+            min-height: 700px;
+            padding: 5rem 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .page-hero::after {
+            content: 'DESA';
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 12rem;
+            color: rgba(255, 250, 242, .04);
+            font-weight: 700;
+            pointer-events: none;
+            letter-spacing: -.05em;
+        }
+
+        .page-hero .wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-hero .eyebrow {
+            color: var(--saffron);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -.04em;
+            margin-bottom: 1rem;
+        }
+
+        .page-hero h1 em {
+            color: var(--saffron);
+            font-style: italic;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: #d6ded4;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ========== INFO DESA ========== */
+        .info-section {
+            padding: 6rem 0;
+            background: var(--cream);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .info-content {
+            padding: 2rem;
+            background: var(--paper);
+            border-radius: 1.5rem;
+            border: 1px solid var(--line);
+        }
+
+        .info-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .info-content p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .info-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-detail {
+            padding: 2rem;
+            background: var(--forest);
+            color: var(--paper);
+            border-radius: 1.5rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .info-detail h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--saffron);
+        }
+
+        .info-detail ul {
+            list-style: none;
+        }
+
+        .info-detail li {
+            padding: .8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .info-detail li:last-child {
+            border-bottom: none;
+        }
+
+        .info-detail .label {
+            color: #aab9ac;
+            font-size: .8rem;
+            display: block;
+            margin-bottom: .3rem;
+        }
+
+        .info-detail .value {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* ========== DATA DEMOGRAFI ========== */
+        .demografi-section {
+            padding: 6rem 0;
+            background: var(--paper);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title .eyebrow {
+            color: var(--terra);
+            font-weight: 700;
+            font-size: .75rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            margin-bottom: .8rem;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--forest);
+            letter-spacing: -.04em;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 1rem auto 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: var(--cream);
+            border-radius: 1.25rem;
+            border: 1px solid var(--line);
+            transition: all .3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--forest);
+            line-height: 1;
+            margin-bottom: .8rem;
+        }
+
+        .stat-label {
+            color: var(--muted);
+            font-size: .85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+
+        .demografi-chart {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .chart-card {
+            background: var(--cream);
+            border: 1px solid var(--line);
+            border-radius: 1.25rem;
+            padding: 2rem;
+        }
+
+        .chart-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--forest);
+            margin-bottom: 1.5rem;
+        }
+
+        .bar-chart {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .bar-item {
+            display: grid;
+            grid-template-columns: 100px 1fr 50px;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .bar-label {
+            font-size: .8rem;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .bar-track {
+            height: 12px;
+            background: var(--line);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--saffron);
+            border-radius: 999px;
+            transition: width .8s;
+        }
+
+        .bar-value {
+            font-size: .8rem;
+            color: var(--forest);
+            font-weight: 700;
+            text-align: right;
+        }
+
+        /* ========== POTENSI DESA ========== */
+        .potensi-section {
+            padding: 6rem 0;
+            background: var(--cream);
+        }
+
+        .potensi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .potensi-card {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 1.25rem;
+            overflow: hidden;
+            transition: all .3s;
+        }
+
+        .potensi-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+        }
+
+        .potensi-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .potensi-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .4s;
+        }
+
+        .potensi-card:hover .potensi-image img {
+            transform: scale(1.08);
+        }
+
+        .potensi-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(31, 70, 60, .4), transparent);
+        }
+
+        .potensi-icon {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            width: 50px;
+            height: 50px;
+            background: var(--saffron);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+            z-index: 2;
+        }
+
+        .potensi-content {
+            padding: 1.5rem;
+        }
+
+        .potensi-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--forest);
+            margin-bottom: .8rem;
+        }
+
+        .potensi-content p {
+            color: var(--muted);
+            font-size: .85rem;
+            line-height: 1.7;
+        }
+
+        /* ========== STRUKTUR DESA ========== */
+        .struktur-section {
+            padding: 6rem 0;
+            background: var(--forest);
+            color: var(--paper);
+        }
+
+        .struktur-section .section-title h2,
+        .struktur-section .section-title .eyebrow {
+            color: var(--paper);
+        }
+
+        .struktur-section .section-title p {
+            color: #aab9ac;
+        }
+
+        .struktur-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .struktur-card {
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all .3s;
+        }
+
+        .struktur-card:hover {
+            background: rgba(255, 255, 255, .15);
+            transform: translateY(-5px);
+        }
+
+        .struktur-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--saffron);
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .struktur-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: .5rem;
+        }
+
+        .struktur-card .jabatan {
+            color: var(--saffron);
+            font-size: .8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+
+        /* ========== CTA ========== */
+        .cta-section {
+            background: var(--forest-2);
+            color: var(--paper);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #aab9ac;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .9rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: .9rem;
+            transition: all .2s;
+        }
+
+        .btn-primary {
+            background: var(--saffron);
+            color: #2f2517;
+        }
+
+        .btn-primary:hover {
+            background: #f0b250;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, .3);
+            color: var(--paper);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--saffron);
+            color: var(--saffron);
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: var(--forest);
+            color: #d6ded4;
+            padding: 3rem 0;
+        }
+
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--paper);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: .85rem;
+            line-height: 1.7;
+            color: #aab9ac;
+        }
+
+        .footer-title {
+            font-weight: 700;
+            color: var(--paper);
+            margin-bottom: 1.2rem;
+            font-size: .95rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: .6rem;
+        }
+
+        .footer-links a {
+            color: #aab9ac;
+            font-size: .85rem;
+            transition: color .2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--saffron);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: .8rem;
+            color: #aab9ac;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 960px) {
+            .wrap {
+                padding: 0 2rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .info-detail {
+                position: static;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .demografi-chart {
+                grid-template-columns: 1fr;
+            }
+
+            .potensi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .struktur-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                padding: 0 1.25rem;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+
+            .main-nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .page-hero {
+                padding: 3rem 0;
+            }
+
+            .info-content,
+            .info-detail {
+                padding: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .potensi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .struktur-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">
+                    <img src="images/logokkn.png" alt="Logo KKN Pasirjati">
+                </span>
+                KKN Pasirjati 2
+            </a>
+
+            <nav class="main-nav" aria-label="Navigasi utama">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="profilekkn.html" class="nav-link">Profile KKN</a>
+                <a href="profiledesa.html" class="nav-link active">Profile Desa</a>
+                <a href="program.html" class="nav-link">Program</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" id="beranda">
+        <div class="wrap">
+            <div class="eyebrow">Desa Pasirjati</div>
+            <h1>Mengenal <em>Desa Pasirjati</em></h1>
+            <p>Desa Pasirjati adalah desa yang terletak di kecamatan dengan potensi alam dan sumber daya manusia yang
+                melimpah. Berikut adalah profil lengkap desa kami.</p>
+        </div>
+    </section>
+
+    <!-- INFO DESA -->
+    <section class="info-section" id="tentang">
+        <div class="wrap info-grid">
+            <div class="info-content">
+                <h2>Sejarah Desa Pasirjati</h2>
+                <p>Desa Pasirjati memiliki sejarah panjang yang bermula dari sebuah perkampungan kecil yang didirikan
+                    oleh para pendatang dari berbagai daerah. Nama "Pasirjati" berasal dari kata "pasir" yang berarti
+                    bukit atau pasir dan "jati" yang berarti pohon jati yang banyak tumbuh di daerah tersebut.</p>
+
+                <p>Seiring berjalannya waktu, Desa Pasirjati berkembang menjadi desa yang mandiri dengan berbagai
+                    potensi sumber daya alam dan manusia. Desa ini memiliki luas wilayah sekitar 4,5 km² yang sebagian
+                    besar digunakan untuk lahan pertanian, perkebunan, dan pemukiman penduduk.</p>
+
+                <p>Secara administratif, Desa Pasirjati terbagi menjadi beberapa dusun dan memiliki jumlah penduduk yang
+                    terus berkembang. Masyarakat Desa Pasirjati dikenal ramah, gotong royong, dan memiliki tradisi yang
+                    masih dijaga hingga saat ini.</p>
+            </div>
+
+            <div class="info-detail">
+                <h3>Informasi Umum</h3>
+                <ul>
+                    <li>
+                        <span class="label">Kecamatan</span>
+                        <span class="value">Pasirjati</span>
+                    </li>
+                    <li>
+                        <span class="label">Kabupaten</span>
+                        <span class="value">Bandung</span>
+                    </li>
+                    <li>
+                        <span class="label">Provinsi</span>
+                        <span class="value">Jawa Barat</span>
+                    </li>
+                    <li>
+                        <span class="label">Luas Wilayah</span>
+                        <span class="value">4,5 km²</span>
+                    </li>
+                    <li>
+                        <span class="label">Jumlah Penduduk</span>
+                        <span class="value">3.245 Jiwa</span>
+                    </li>
+                    <li>
+                        <span class="label">Jumlah Dusun</span>
+                        <span class="value">5 Dusun</span>
+                    </li>
+                    <li>
+                        <span class="label">Kode Pos</span>
+                        <span class="value">40682</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATA DEMOGRAFI -->
+    <section class="demografi-section" id="anggota">
+        <div class="wrap">
+            <div class="section-title">
+                <div class="eyebrow">Data Demografi</div>
+                <h2>Statistik Penduduk</h2>
+                <p>Data kependudukan Desa Pasirjati berdasarkan sensus dan pendataan terbaru.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1,678</div>
+                    <div class="stat-label">Laki-laki</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1,567</div>
+                    <div class="stat-label">Perempuan</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">245</div>
+                    <div class="stat-label">Kepala Keluarga</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2.8</div>
+                    <div class="stat-label">Rata-rata Jiwa/KK</div>
+                </div>
+            </div>
+
+            <div class="demografi-chart">
+                <div class="chart-card">
+                    <h3>Kelompok Usia</h3>
+                    <div class="bar-chart">
+                        <div class="bar-item">
+                            <span class="bar-label">0-14 Tahun</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 25%;"></div>
+                            </div>
+                            <span class="bar-value">25%</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-label">15-34 Tahun</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 35%;"></div>
+                            </div>
+                            <span class="bar-value">35%</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-label">35-54 Tahun</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 25%;"></div>
+                            </div>
+                            <span class="bar-value">25%</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-label">55+ Tahun</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 15%;"></div>
+                            </div>
+                            <span class="bar-value">15%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Tingkat Pendidikan</h3>
+                    <div class="bar-chart">
+                        <div class="bar-item">
+                            <span class="bar-label">SD</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 30%;"></div>
+                            </div>
+                            <span class="bar-value">30%</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-label">SMP</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 25%;"></div>
+                            </div>
+                            <span class="bar-value">25%</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-label">SMA</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 30%;"></div>
+                            </div>
+                            <span class="bar-value">30%</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-label">Perguruan Tinggi</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width: 15%;"></div>
+                            </div>
+                            <span class="bar-value">15%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POTENSI DESA -->
+    <section class="potensi-section" id="proker">
+        <div class="wrap">
+            <div class="section-title">
+                <div class="eyebrow">Potensi Unggulan</div>
+                <h2>Potensi Desa Pasirjati</h2>
+                <p>Berbagai potensi yang dimiliki Desa Pasirjati yang dapat dikembangkan untuk kesejahteraan masyarakat.
+                </p>
+            </div>
+
+            <div class="potensi-grid">
+                <div class="potensi-card">
+                    <div class="potensi-image">
+                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=85"
+                            alt="Potensi Pertanian" />
+                        <div class="potensi-icon">🌾</div>
+                    </div>
+                    <div class="potensi-content">
+                        <h3>Pertanian</h3>
+                        <p>Lahan pertanian yang luas dengan hasil utama padi, jagung, dan sayur-sayuran. Masyarakat
+                            sebagian besar bermata pencaharian sebagai petani.</p>
+                    </div>
+                </div>
+
+                <div class="potensi-card">
+                    <div class="potensi-image">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=85"
+                            alt="Potensi Perkebunan" />
+                        <div class="potensi-icon">🌱</div>
+                    </div>
+                    <div class="potensi-content">
+                        <h3>Perkebunan</h3>
+                        <p>Perkebunan singkong dan pisang yang melimpah sebagai bahan baku pengolahan makanan. Potensi
+                            ini menjadi bahan utama inovasi kami.</p>
+                    </div>
+                </div>
+
+                <div class="potensi-card">
+                    <div class="potensi-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=85"
+                            alt="Potensi Perikanan" />
+                        <div class="potensi-icon">🐟</div>
+                    </div>
+                    <div class="potensi-content">
+                        <h3>Perikanan</h3>
+                        <p>Budidaya ikan air tawar seperti ikan nila dan lele yang menjadi sumber protein dan mata
+                            pencaharian bagi sebagian masyarakat.</p>
+                    </div>
+                </div>
+
+                <div class="potensi-card">
+                    <div class="potensi-image">
+                        <img src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=600&q=85"
+                            alt="Potensi Pariwisata" />
+                        <div class="potensi-icon">🏞️</div>
+                    </div>
+                    <div class="potensi-content">
+                        <h3>Pariwisata</h3>
+                        <p>Keindahan alam persawahan dan perbukitan yang berpotensi menjadi desa wisata berbasis alam
+                            dan agro.</p>
+                    </div>
+                </div>
+
+                <div class="potensi-card">
+                    <div class="potensi-image">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=600&q=85"
+                            alt="Potensi UMKM" />
+                        <div class="potensi-icon">🏪</div>
+                    </div>
+                    <div class="potensi-content">
+                        <h3>UMKM</h3>
+                        <p>Banyak pelaku UMKM yang memproduksi makanan olahan, kerajinan tangan, dan produk lokal
+                            lainnya yang berpotensi untuk dikembangkan.</p>
+                    </div>
+                </div>
+
+                <div class="potensi-card">
+                    <div class="potensi-image">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=85"
+                            alt="Potensi SDM" />
+                        <div class="potensi-icon">👥</div>
+                    </div>
+                    <div class="potensi-content">
+                        <h3>Sumber Daya Manusia</h3>
+                        <p>SDM yang produktif dan kreatif dengan semangat gotong royong yang tinggi serta kearifan lokal
+                            yang masih terjaga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRUKTUR DESA -->
+    <section class="struktur-section">
+        <div class="wrap">
+            <div class="section-title">
+                <div class="eyebrow">Pemerintahan</div>
+                <h2>Struktur Desa</h2>
+                <p>Susunan organisasi dan tata kerja pemerintah Desa Pasirjati.</p>
+            </div>
+
+            <div class="struktur-grid">
+                <div class="struktur-card">
+                    <div class="struktur-avatar">👤</div>
+                    <h4>Kepala Desa</h4>
+                    <span class="jabatan">Kepala Desa</span>
+                </div>
+
+                <div class="struktur-card">
+                    <div class="struktur-avatar">👤</div>
+                    <h4>Sekretaris Desa</h4>
+                    <span class="jabatan">Sekretaris</span>
+                </div>
+
+                <div class="struktur-card">
+                    <div class="struktur-avatar">👤</div>
+                    <h4>Kaur Keuangan</h4>
+                    <span class="jabatan">Kaur</span>
+                </div>
+
+                <div class="struktur-card">
+                    <div class="struktur-avatar">👤</div>
+                    <h4>Kaur Pembangunan</h4>
+                    <span class="jabatan">Kaur</span>
+                </div>
+
+                <div class="struktur-card">
+                    <div class="struktur-avatar">👤</div>
+                    <h4>Kaur Pemerintahan</h4>
+                    <span class="jabatan">Kaur</span>
+                </div>
+
+                <div class="struktur-card">
+                    <div class="struktur-avatar">👤</div>
+                    <h4>Kaur Kesra</h4>
+                    <span class="jabatan">Kaur</span>
+                </div>
+
+                <div class="struktur-card">
+                    <div class="struktur-avatar">👤</div>
+                    <h4>Ketua RT 01</h4>
+                    <span class="jabatan">Ketua RT</span>
+                </div>
+
+                <div class="struktur-card">
+                    <div class="struktur-avatar">👤</div>
+                    <h4>Ketua RT 02</h4>
+                    <span class="jabatan">Ketua RT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="wrap">
+            <h2>Ingin Mengenal Lebih Dekat?</h2>
+            <p>Jelajahi berbagai informasi lainnya tentang kegiatan kami di Desa Pasirjati atau lihat profil anggota
+                kelompok kami.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="program.html" class="btn btn-primary">Lihat Kegiatan →</a>
+                <a href="profilekkn.html" class="btn btn-outline">Profile KKN</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">
+                            <img src="images/logokkn.png" alt="Logo KKN Pasirjati">
+                        </span>
+                        KKN Pasirjati 2
+                    </a>
+                    <p>Kelompok KKN dari Universitas Muhammadiyah Bandung yang berdedikasi untuk pengembangan dan
+                        inovasi Desa Pasirjati.</p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Navigasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="profilekkn.html">Profile KKN</a></li>
+                        <li><a href="profiledesa.html">Profile Desa</a></li>
+                        <li><a href="program.html">Program</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Lainnya</h4>
+                    <ul class="footer-links">
+                        <li><a href="indexhaki.html">HAKI</a></li>
+                        <li><a href="indexresep.html">Resep</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 KKN Pasirjati 02/2026 - Universitas Muhammadiyah Bandung. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = navLinks.classList.toggle('is-open');
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                const icon = menuToggle.querySelector('i');
+                if (icon) icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            });
+
+            navLinks.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('is-open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) icon.className = 'fas fa-bars';
+                });
+            });
+        }
+    </script>
+
+</body>
+
+</html>
