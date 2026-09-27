@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#f6f3e9">
+	<meta name="description" content="Program Pengenalan Emosi KKN Pasirjati 2: belajar mengenali, memahami, dan mengelola perasaan bersama anak-anak.">
+	<title>Pengenalan Emosi | KKN Pasirjati 2</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--ink: #20372f;
+			--muted: #63736a;
+			--paper: #fffdf7;
+			--canvas: #f6f3e9;
+			--line: #dedfd2;
+			--green: #28634e;
+			--yellow: #f4c545;
+			--blue: #65b9df;
+			--red: #e35a45;
+			--leaf: #76b94b;
+			--violet: #9874cb;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			color: var(--ink);
+			background: var(--canvas);
+			font-family: 'DM Sans', sans-serif;
+			line-height: 1.6;
+		}
+		a { color: inherit; text-decoration: none; }
+		button { font: inherit; }
+		img { display: block; max-width: 100%; }
+		.wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+		.site-header {
+			position: sticky;
+			top: 0;
+			z-index: 100;
+			border-bottom: 1px solid #ddd3c2;
+			background: rgba(245, 239, 228, .95);
+			backdrop-filter: blur(12px);
+		}
+		.header-inner { width: 100%; max-width: 1280px; min-height: 80px; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+		.brand { display: flex; align-items: center; gap: 12px; color: var(--green); font: 700 1.3rem/1.2 'Playfair Display', serif; }
+		.logo-icon { width: 44px; height: 44px; display: grid; place-items: center; flex: 0 0 auto; }
+		.logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+		.main-nav { display: flex; align-items: center; gap: 2rem; }
+		.nav-link { position: relative; padding: 10px 0; color: #5f675e; font-size: .9rem; font-weight: 600; }
+		.site-header .brand { color: #1f463c; }
+		.nav-link:hover, .nav-link:focus-visible, .nav-link.active { color: #1f463c; }
+		.nav-link.active::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 100%; height: 3px; border-radius: 3px; background: #e8a33a; }
+		.nav-item { position: relative; }
+		.has-dropdown { display: flex; align-items: center; gap: 7px; }
+		.chevron { font-style: normal; font-size: .72rem; transition: transform .2s; }
+		.nav-item.open .chevron { transform: rotate(180deg); }
+		.dropdown {
+			display: none;
+			position: absolute;
+			top: calc(100% + 8px);
+			left: 50%;
+			min-width: 210px;
+			transform: translateX(-50%);
+			overflow: hidden;
+			border: 1px solid var(--line);
+			border-radius: 8px;
+			background: var(--paper);
+			box-shadow: 0 14px 34px rgba(32, 55, 47, .13);
+		}
+		.dropdown.open { display: block; }
+		.dropdown a { display: block; padding: 10px 15px; color: #53655b; font-size: .88rem; font-weight: 700; }
+		.dropdown a + a { border-top: 1px solid var(--line); }
+		.dropdown a:hover, .dropdown a:focus-visible { color: var(--green); background: #eef4e8; }
+		.menu-toggle { display: none; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); color: var(--green); font-size: 1.2rem; }
+
+		.hero {
+			position: relative;
+			overflow: hidden;
+			padding: 76px 0 84px;
+			background-color: #e6f1dc;
+			background-image: radial-gradient(circle at 7% 18%, rgba(244, 197, 69, .35) 0 4px, transparent 5px), radial-gradient(circle at 92% 72%, rgba(101, 185, 223, .28) 0 6px, transparent 7px);
+			background-size: 42px 42px, 58px 58px;
+		}
+		.hero-grid { display: grid; grid-template-columns: 1fr .88fr; align-items: center; gap: 60px; }
+		.eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 18px; color: #8a6420; font-size: .75rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+		.eyebrow::before { content: ''; width: 25px; height: 3px; border-radius: 9px; background: var(--yellow); }
+		h1, h2, h3, p { margin-top: 0; }
+		h1 { max-width: 620px; margin-bottom: 20px; font: 700 clamp(2.8rem, 5vw, 4.7rem)/1.02 'Fredoka', sans-serif; letter-spacing: 0; }
+		h1 span { color: var(--green); }
+		.hero-copy > p { max-width: 570px; margin-bottom: 26px; color: #4e6558; font-size: 1.05rem; }
+		.hero-points { display: flex; flex-wrap: wrap; gap: 9px; }
+		.hero-points span { padding: 7px 12px; border: 1px solid rgba(40, 99, 78, .2); border-radius: 999px; background: rgba(255, 253, 247, .75); color: #42624e; font-size: .82rem; font-weight: 700; }
+		.hero-art { max-width: 410px; justify-self: end; padding: 9px; border: 1px solid rgba(40, 99, 78, .18); border-radius: 22px; background: var(--paper); box-shadow: 0 20px 48px rgba(32, 55, 47, .14); transform: rotate(2deg); animation: arrive .7s ease both; }
+		.hero-art img { width: 100%; border-radius: 15px; }
+		@keyframes arrive { from { opacity: 0; transform: translateY(14px) rotate(2deg); } to { opacity: 1; transform: translateY(0) rotate(2deg); } }
+
+		.section { padding: 84px 0; }
+		.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 32px; }
+		.section-heading h2 { max-width: 640px; margin: 0; font: 600 clamp(2rem, 4vw, 3.1rem)/1.08 'Fredoka', sans-serif; }
+		.section-heading p { max-width: 390px; margin: 0; color: var(--muted); }
+		.emotion-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+		.emotion-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); box-shadow: 0 5px 16px rgba(32, 55, 47, .05); transition: transform .2s, box-shadow .2s; }
+		.emotion-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(32, 55, 47, .12); }
+		.poster-button { display: block; width: 100%; padding: 8px; border: 0; background: #f2f1e8; cursor: zoom-in; }
+		.poster-button:focus-visible { outline: 3px solid var(--green); outline-offset: -3px; }
+		.poster-button img { width: 100%; aspect-ratio: 450 / 640; border-radius: 8px; object-fit: cover; }
+		.emotion-copy { padding: 15px 15px 17px; }
+		.emotion-copy h3 { margin: 0 0 5px; font: 600 1.35rem/1.1 'Fredoka', sans-serif; }
+		.emotion-copy p { margin: 0; color: var(--muted); font-size: .86rem; line-height: 1.55; }
+		.emotion-card[data-emotion="senang"] h3 { color: #ba8611; }
+		.emotion-card[data-emotion="sedih"] h3 { color: #2479a7; }
+		.emotion-card[data-emotion="marah"] h3 { color: #be4938; }
+		.emotion-card[data-emotion="takut"] h3 { color: #548b36; }
+		.emotion-card[data-emotion="terkejut"] h3 { color: #7652ac; }
+
+		.practice-section { padding: 78px 0; background: #203f34; color: #fffdf7; }
+		.practice-section .eyebrow { color: #f5d775; }
+		.practice-section h2 { margin: 0 0 30px; font: 600 clamp(2rem, 4vw, 3rem)/1.1 'Fredoka', sans-serif; }
+		.practice-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.22); border-bottom: 1px solid rgba(255,255,255,.22); }
+		.practice-step { min-height: 174px; padding: 22px 24px 24px 0; }
+		.practice-step + .practice-step { padding-left: 24px; border-left: 1px solid rgba(255,255,255,.22); }
+		.step-number { display: block; margin-bottom: 14px; color: #f5d775; font: 600 1.8rem/1 'Fredoka', sans-serif; }
+		.practice-step h3 { margin: 0 0 7px; font-size: 1.02rem; }
+		.practice-step p { margin: 0; color: #d1dfd1; font-size: .9rem; }
+		.closing { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 40px 0; }
+		.closing p { max-width: 650px; margin: 0; color: var(--muted); }
+		.back-link { display: inline-flex; align-items: center; gap: 9px; flex: 0 0 auto; padding: 12px 17px; border-radius: 8px; background: var(--green); color: white; font-weight: 700; transition: background .2s, transform .2s; }
+		.back-link:hover { transform: translateY(-2px); background: #1d503e; }
+		.site-footer { padding: 3rem 0; background: #1f463c; color: #d6ded4; }
+		.footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+		.footer-brand .brand { margin-bottom: 1rem; color: var(--paper); }
+		.footer-brand p { max-width: 370px; margin: 0; color: #aab9ac; font-size: .85rem; line-height: 1.7; }
+		.footer-title { margin: 0 0 1.2rem; color: var(--paper); font-size: .95rem; font-weight: 700; }
+		.footer-links { margin: 0; padding: 0; list-style: none; }
+		.footer-links li { margin-bottom: .6rem; }
+		.footer-links a { color: #aab9ac; font-size: .85rem; transition: color .2s; }
+		.footer-links a:hover, .footer-links a:focus-visible { color: var(--yellow); }
+		.footer-bottom { padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.1); color: #aab9ac; text-align: center; font-size: .8rem; }
+		.footer-bottom p { margin: 0; }
+
+		.lightbox { position: fixed; inset: 0; z-index: 50; display: none; place-items: center; padding: 24px; background: rgba(19, 34, 29, .84); }
+		.lightbox.open { display: grid; }
+		.lightbox img { max-height: min(88vh, 900px); width: auto; max-width: min(92vw, 620px); border: 7px solid var(--paper); border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+		.lightbox-close { position: absolute; top: 18px; right: 20px; display: grid; place-items: center; width: 44px; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.6); border-radius: 50%; background: transparent; color: white; font-size: 1.6rem; }
+
+		@media (max-width: 980px) {
+			.hero-grid { grid-template-columns: 1fr .8fr; gap: 32px; }
+			.emotion-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+			.practice-grid { grid-template-columns: repeat(2, 1fr); }
+			.practice-step:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.22); }
+			.practice-step:nth-child(4) { border-top: 1px solid rgba(255,255,255,.22); }
+		}
+		@media (max-width: 960px) {
+			.header-inner { position: relative; min-height: 72px; padding: .75rem 2rem; }
+			.menu-toggle { display: grid; }
+			.main-nav { display: none; position: absolute; top: 100%; left: 2rem; right: 2rem; z-index: 10; align-items: stretch; gap: 0; padding: .5rem; border: 1px solid var(--line); border-radius: 0 0 14px 14px; background: var(--paper); box-shadow: 0 12px 28px rgba(31,70,60,.14); }
+			.main-nav.is-open { display: flex; flex-direction: column; }
+			.main-nav > .nav-link, .main-nav > .nav-item { width: 100%; }
+			.main-nav > .nav-link, .main-nav > .nav-item > .nav-link { min-height: 44px; padding: .7rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+			.main-nav .nav-link.active::after { display: none; }
+			.dropdown { position: static; min-width: 0; margin: 0 .5rem .5rem; transform: none; box-shadow: none; border-radius: 8px; }
+			.footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+		}
+		@media (max-width: 700px) {
+			.wrap { width: min(100% - 32px, 560px); }
+			.header-inner { min-height: 68px; padding: .65rem 1rem; }
+			.main-nav { left: 1rem; right: 1rem; }
+			.hero { padding: 52px 0 60px; }
+			.hero-grid { grid-template-columns: 1fr; gap: 34px; }
+			.hero-copy { text-align: center; }
+			.hero-copy > p { margin-left: auto; margin-right: auto; }
+			.hero-points { justify-content: center; }
+			.hero-art { justify-self: center; width: min(100%, 360px); }
+			.section { padding: 60px 0; }
+			.section-heading { display: block; }
+			.section-heading p { margin-top: 12px; }
+			.emotion-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+			.emotion-copy { padding: 12px; }
+			.emotion-copy h3 { font-size: 1.2rem; }
+			.emotion-copy p { font-size: .8rem; }
+			.practice-section { padding: 58px 0; }
+			.practice-step { min-height: 0; padding: 18px 14px 20px 0; }
+			.practice-step + .practice-step { padding-left: 14px; }
+			.practice-step:nth-child(3) { padding-left: 0; }
+			.closing { align-items: flex-start; flex-direction: column; padding: 30px 0; }
+			.footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+			.site-footer > .wrap { width: min(100% - 32px, 560px); padding: 0; }
+		}
+		@media (max-width: 380px) {
+			.emotion-grid { grid-template-columns: 1fr; }
+			.poster-button img { aspect-ratio: 450 / 580; object-fit: contain; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			*, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+		}
+	</style>
+</head>
+
+<body>
+	<header class="site-header">
+		<div class="wrap header-inner">
+			<a href="index.html" class="brand"><span class="logo-icon"><img src="logokkn-bulat.png" alt="Logo KKN Pasirjati"></span><span>KKN Pasirjati 2</span></a>
+			<button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Buka menu navigasi"><span aria-hidden="true">☰</span></button>
+			<nav class="main-nav" id="navLinks" aria-label="Navigasi utama">
+				<a class="nav-link" href="index.html">Home</a>
+				<a class="nav-link" href="profilekkn.html">Profile KKN</a>
+				<a class="nav-link" href="profiledesa.html">Profile Desa</a>
+				<div class="nav-item" id="programNavItem">
+					<a class="nav-link has-dropdown active" id="programToggle" href="program.html#home" aria-haspopup="true" aria-expanded="false">Program <i class="chevron" aria-hidden="true">▾</i></a>
+					<div class="dropdown" id="programDropdown" role="menu">
+						<a href="program.html#home" role="menuitem">Program KKN</a>
+						<a href="resepnuget.html" role="menuitem">Resep Nugget</a>
+						<a href="pengenalanemosi.html" role="menuitem" aria-current="page">Pengenalan Emosi</a>
+						<a href="pakonel.html" role="menuitem">Pakonel</a>
+						<a href="kandangpintar.html" role="menuitem">Kandang Pintar</a>
+						<a href="banksampah.html" role="menuitem">Bank Sampah</a>
+						<a href="persentasi.html" role="menuitem">Presentasi</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="wrap hero-grid">
+				<div class="hero-copy">
+					<div class="eyebrow">Program edukasi anak · KKN Pasirjati 2</div>
+					<h1>Semua perasaan punya <span>cerita.</span></h1>
+					<p>Melalui poster, permainan, dan percakapan sederhana, anak-anak diajak mengenali nama perasaan, memahami penyebabnya, serta menyampaikan apa yang dirasakan dengan cara yang baik.</p>
+					<div class="hero-points"><span>Kenali perasaan</span><span>Ceritakan dengan aman</span><span>Belajar memahami teman</span></div>
+				</div>
+				<figure class="hero-art">
+					<img src="program/emosi.jpeg" alt="Poster kegiatan pengenalan lima macam emosi untuk anak-anak">
+				</figure>
+			</div>
+		</section>
+
+		<section class="section" id="ragam-emosi">
+			<div class="wrap">
+				<div class="section-heading">
+					<div><div class="eyebrow">Kenali ragam perasaan</div><h2>Perasaan yang berbeda, semuanya boleh dirasakan.</h2></div>
+					<p>Emosi memberi tahu kita tentang apa yang sedang terjadi. Tidak ada perasaan yang perlu disembunyikan; kita bisa belajar menanggapinya dengan aman.</p>
+				</div>
+				<div class="emotion-grid">
+					<article class="emotion-card" data-emotion="senang">
+						<button class="poster-button" type="button" data-poster="program/POSTER%20SENANG.jpeg" data-alt="Poster emosi senang" aria-label="Perbesar poster emosi senang"><img src="program/POSTER%20SENANG.jpeg" alt="Poster senang: merasa bahagia saat bermain, mendapat hadiah, atau bersama teman" loading="lazy"></button>
+						<div class="emotion-copy"><h3>Senang</h3><p>Rasa bahagia saat bermain, mendapat hadiah, atau bersama teman.</p></div>
+					</article>
+					<article class="emotion-card" data-emotion="sedih">
+						<button class="poster-button" type="button" data-poster="program/POSTER%20SEDIH.jpeg" data-alt="Poster emosi sedih" aria-label="Perbesar poster emosi sedih"><img src="program/POSTER%20SEDIH.jpeg" alt="Poster sedih: merasa kecewa atau kehilangan, misalnya saat mainan rusak" loading="lazy"></button>
+						<div class="emotion-copy"><h3>Sedih</h3><p>Rasa kecewa atau kehilangan. Bercerita kepada orang tepercaya bisa membantu.</p></div>
+					</article>
+					<article class="emotion-card" data-emotion="marah">
+						<button class="poster-button" type="button" data-poster="program/POSTER%20MARAH.jpeg" data-alt="Poster emosi marah" aria-label="Perbesar poster emosi marah"><img src="program/POSTER%20MARAH.jpeg" alt="Poster marah: merasa kesal saat diganggu atau tidak mendapat keinginan" loading="lazy"></button>
+						<div class="emotion-copy"><h3>Marah</h3><p>Rasa kesal saat ada hal yang tidak nyaman. Berhenti sejenak sebelum bertindak.</p></div>
+					</article>
+					<article class="emotion-card" data-emotion="takut">
+						<button class="poster-button" type="button" data-poster="program/POSTER%20TAKUT.jpeg" data-alt="Poster emosi takut" aria-label="Perbesar poster emosi takut"><img src="program/POSTER%20TAKUT.jpeg" alt="Poster takut: merasa khawatir saat gelap, sendirian, atau melihat hal menakutkan" loading="lazy"></button>
+						<div class="emotion-copy"><h3>Takut</h3><p>Rasa khawatir ketika merasa tidak aman. Cari orang dewasa yang dipercaya.</p></div>
+					</article>
+					<article class="emotion-card" data-emotion="terkejut">
+						<button class="poster-button" type="button" data-poster="program/POSTER%20TERKEJUT.jpeg" data-alt="Poster emosi terkejut" aria-label="Perbesar poster emosi terkejut"><img src="program/POSTER%20TERKEJUT.jpeg" alt="Poster terkejut: kaget karena sesuatu terjadi tiba-tiba" loading="lazy"></button>
+						<div class="emotion-copy"><h3>Terkejut</h3><p>Rasa kaget ketika sesuatu terjadi tiba-tiba. Ambil waktu untuk memahami situasi.</p></div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="practice-section">
+			<div class="wrap">
+				<div class="eyebrow">Bekal sederhana sehari-hari</div>
+				<h2>Kenali. Tenangkan. Ceritakan.</h2>
+				<div class="practice-grid">
+					<article class="practice-step"><span class="step-number">01</span><h3>Berhenti sebentar</h3><p>Perhatikan tubuh dan beri diri waktu untuk merasakan.</p></article>
+					<article class="practice-step"><span class="step-number">02</span><h3>Beri nama</h3><p>Coba katakan, “Aku sedang merasa sedih” atau “Aku sedang kesal.”</p></article>
+					<article class="practice-step"><span class="step-number">03</span><h3>Atur napas</h3><p>Tarik napas pelan, lalu keluarkan perlahan beberapa kali.</p></article>
+					<article class="practice-step"><span class="step-number">04</span><h3>Minta bantuan</h3><p>Bagikan perasaan kepada orang dewasa yang dipercaya.</p></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="wrap closing">
+			<p>Dalam Festival Ceria, anak-anak belajar mengenali emosi melalui media visual dan kegiatan bersama. Setiap anak boleh bercerita dengan caranya sendiri dan didampingi dengan penuh perhatian.</p>
+			<a class="back-link" href="program.html#emosi">Kembali ke Program KKN <span aria-hidden="true">→</span></a>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="wrap">
+			<div class="footer-inner">
+				<div class="footer-brand">
+					  <a href="index.html" class="brand"><span class="logo-icon"><img src="logokkn-bulat.png" alt="Logo KKN Pasirjati"></span><span>KKN Pasirjati 2</span></a>
+					<p>Kelompok KKN Universitas Muhammadiyah Bandung yang berkolaborasi dan belajar bersama masyarakat Kelurahan Pasirjati.</p>
+				</div>
+				<div>
+					<h2 class="footer-title">Navigasi</h2>
+					<ul class="footer-links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="profilekkn.html">Profile KKN</a></li>
+						<li><a href="profiledesa.html">Profile Desa</a></li>
+						<li><a href="program.html">Program</a></li>
+					</ul>
+				</div>
+				<div>
+					<h2 class="footer-title">Program</h2>
+					<ul class="footer-links">
+						<li><a href="resepnuget.html">Resep Nugget</a></li>
+						<li><a href="pengenalanemosi.html">Pengenalan Emosi</a></li><li><a href="kandangpintar.html">Kandang Pintar</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom"><p>© 2026 KKN Pasirjati 02/2026 - Universitas Muhammadiyah Bandung. All rights reserved.</p></div>
+		</div>
+	</footer>
+
+	<div class="lightbox" id="posterLightbox" role="dialog" aria-modal="true" aria-label="Poster emosi" aria-hidden="true">
+		<button class="lightbox-close" id="lightboxClose" type="button" aria-label="Tutup poster">×</button>
+		<img id="lightboxImage" src="" alt="">
+	</div>
+
+	<script>
+		const menuToggle = document.getElementById('menuToggle');
+		const navLinks = document.getElementById('navLinks');
+		const programNavItem = document.getElementById('programNavItem');
+		const programToggle = document.getElementById('programToggle');
+		const programDropdown = document.getElementById('programDropdown');
+
+		const closeDropdown = () => {
+			programNavItem.classList.remove('open');
+			programDropdown.classList.remove('open');
+			programToggle.setAttribute('aria-expanded', 'false');
+		};
+
+		programToggle.addEventListener('click', event => {
+			event.preventDefault();
+			const isOpen = programNavItem.classList.toggle('open');
+			programDropdown.classList.toggle('open', isOpen);
+			programToggle.setAttribute('aria-expanded', String(isOpen));
+		});
+		programDropdown.querySelectorAll('a').forEach(link => link.addEventListener('click', closeDropdown));
+		document.addEventListener('click', event => { if (!programNavItem.contains(event.target)) closeDropdown(); });
+		document.addEventListener('keydown', event => { if (event.key === 'Escape') closeDropdown(); });
+
+		menuToggle.addEventListener('click', () => {
+			const isOpen = navLinks.classList.toggle('is-open');
+			menuToggle.setAttribute('aria-expanded', String(isOpen));
+			menuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+			menuToggle.querySelector('span').textContent = isOpen ? '×' : '☰';
+		});
+		navLinks.querySelectorAll('a:not(.has-dropdown)').forEach(link => {
+			link.addEventListener('click', () => {
+				navLinks.classList.remove('is-open');
+				menuToggle.setAttribute('aria-expanded', 'false');
+				menuToggle.setAttribute('aria-label', 'Buka menu navigasi');
+				menuToggle.querySelector('span').textContent = '☰';
+			});
+		});
+
+		const lightbox = document.getElementById('posterLightbox');
+		const lightboxImage = document.getElementById('lightboxImage');
+		const closeLightbox = () => {
+			lightbox.classList.remove('open');
+			lightbox.setAttribute('aria-hidden', 'true');
+			lightboxImage.src = '';
+		};
+		document.querySelectorAll('.poster-button').forEach(button => {
+			button.addEventListener('click', () => {
+				lightboxImage.src = button.dataset.poster;
+				lightboxImage.alt = button.dataset.alt;
+				lightbox.classList.add('open');
+				lightbox.setAttribute('aria-hidden', 'false');
+				document.getElementById('lightboxClose').focus();
+			});
+		});
+		document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+		lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+		document.addEventListener('keydown', event => { if (event.key === 'Escape') closeLightbox(); });
+	</script>
+</body>
+</html>

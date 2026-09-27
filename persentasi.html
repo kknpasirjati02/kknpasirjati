@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#1f463c">
+	<meta name="description" content="Ringkasan presentasi KKN Pasirjati II 2026: kegiatan, program unggulan, kolaborasi warga, dan dokumentasi lapangan.">
+	<title>Presentasi KKN Pasirjati 2 | 2026</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+	<style>
+		:root { --forest:#1f463c; --forest-dark:#16372e; --cream:#f5efe4; --paper:#fffaf2; --ink:#26312d; --muted:#77746b; --line:#ddd3c2; --gold:#e8a33a; --sage:#8da98a; --sky:#9ed9e4; --rust:#b76342; }
+		* { box-sizing:border-box; }
+		html { scroll-behavior:smooth; scroll-padding-top:92px; }
+		body { margin:0; background:var(--cream); color:var(--ink); font:400 16px/1.65 'DM Sans',sans-serif; }
+		a { color:inherit; text-decoration:none; }
+		img { display:block; max-width:100%; }
+		button { font:inherit; }
+		.wrap { width:min(1200px,calc(100% - 64px)); margin-inline:auto; }
+		.site-header { position:sticky; top:0; z-index:50; border-bottom:1px solid var(--line); background:rgba(245,239,228,.96); backdrop-filter:blur(12px); }
+		.header-inner { min-height:80px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+		.brand { display:flex; align-items:center; gap:12px; color:var(--forest); font:700 1.28rem/1.2 'Playfair Display',serif; white-space:nowrap; }
+		.logo-icon { width:44px; height:44px; flex:0 0 auto; display:grid; place-items:center; }
+		.logo-icon img { width:100%; height:100%; object-fit:contain; }
+		.main-nav { display:flex; align-items:center; gap:25px; }
+		.nav-link { position:relative; padding:10px 0; color:#5f675e; font-size:.88rem; font-weight:600; }
+		.nav-link:hover,.nav-link:focus-visible,.nav-link.active { color:var(--forest); }
+		.nav-link.active::after { content:''; position:absolute; left:0; right:0; bottom:-8px; height:3px; border-radius:4px; background:var(--gold); }
+		.nav-item { position:relative; }
+		.has-dropdown { display:flex; align-items:center; gap:6px; }
+		.chevron { font-style:normal; font-size:.7rem; transition:transform .2s; }
+		.nav-item.open .chevron { transform:rotate(180deg); }
+		.dropdown { display:none; position:absolute; top:calc(100% + 14px); left:50%; min-width:220px; transform:translateX(-50%); overflow:hidden; border:1px solid var(--line); border-radius:8px; background:#fff; box-shadow:0 12px 32px rgba(31,70,60,.14); }
+		.dropdown.open { display:block; }
+		.dropdown a { display:block; padding:10px 15px; color:#5f675e; font-size:.86rem; font-weight:600; white-space:nowrap; }
+		.dropdown a+a { border-top:1px solid var(--line); }
+		.dropdown a:hover,.dropdown a:focus-visible { color:var(--forest); background:var(--cream); }
+		.menu-toggle { display:none; width:42px; height:42px; place-items:center; border:1px solid var(--line); border-radius:10px; background:var(--paper); color:var(--forest); font-size:1.2rem; }
+
+		main { overflow:clip; }
+		.slide { position:relative; min-height:690px; padding:94px 0; display:flex; align-items:center; border-bottom:1px solid rgba(31,70,60,.1); }
+		.slide-number { display:flex; align-items:center; gap:12px; margin-bottom:17px; color:#8c7040; font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+		.slide-number::before { content:''; width:29px; height:2px; background:var(--gold); }
+		h1,h2,h3,p { margin-top:0; }
+		h1,h2 { font-family:'Playfair Display',serif; font-weight:600; }
+		h1 { margin-bottom:22px; font-size:clamp(3.2rem,7vw,6.5rem); line-height:.98; letter-spacing:0; }
+		h2 { margin-bottom:18px; color:var(--forest-dark); font-size:clamp(2.2rem,4.5vw,4rem); line-height:1.08; }
+		h1 em,h2 em { color:var(--gold); font-weight:500; }
+		h3 { margin-bottom:8px; color:var(--forest); font-size:1.08rem; line-height:1.3; }
+		.lead { max-width:650px; color:#59675d; font-size:1.08rem; line-height:1.8; }
+		.hero-slide { min-height:min(820px,calc(100svh - 80px)); padding:64px 0; color:var(--paper); background:var(--forest-dark); }
+		.hero-image { position:absolute; inset:0; z-index:0; }
+		.hero-image img { width:100%; height:100%; object-fit:cover; opacity:.38; }
+		.hero-image::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(16,43,35,.93) 0%,rgba(22,55,46,.74) 48%,rgba(22,55,46,.2) 100%); }
+		.hero-content { position:relative; z-index:1; width:min(800px,75%); }
+		.hero-content .slide-number { color:#f1ca79; }
+		.hero-content h1 { max-width:790px; }
+		.hero-content h1 em { color:#f0c769; }
+		.hero-content .lead { max-width:610px; color:#e0e6dd; }
+		.hero-meta { display:flex; flex-wrap:wrap; gap:0; margin-top:35px; border-top:1px solid rgba(255,255,255,.25); }
+		.hero-meta div { min-width:150px; padding:17px 25px 0 0; }
+		.hero-meta strong { display:block; color:#f2d28e; font:600 1.4rem/1.2 'Playfair Display',serif; }
+		.hero-meta span { color:#d3ddd4; font-size:.77rem; }
+		.hero-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+		.button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:44px; padding:10px 15px; border:1px solid rgba(255,255,255,.42); border-radius:5px; color:white; font-size:.84rem; font-weight:700; transition:background .2s,color .2s; }
+		.button:hover { color:var(--forest-dark); background:#f2d28e; }
+		.button-light { border-color:var(--gold); background:var(--gold); color:#2b2d25; }
+		.button-light:hover { background:#f0bc58; }
+
+		.overview-slide { background:#e8eee3; }
+		.overview-grid { display:grid; grid-template-columns:1fr .86fr; align-items:center; gap:72px; }
+		.overview-copy p { max-width:620px; color:var(--muted); }
+		.overview-photo { position:relative; min-height:390px; }
+		.overview-photo img { position:absolute; width:77%; height:78%; object-fit:cover; }
+		.overview-photo img:first-child { top:0; right:0; }
+		.overview-photo img:last-child { bottom:0; left:0; border:8px solid #e8eee3; }
+		.number-line { display:grid; grid-template-columns:repeat(4,1fr); margin-top:32px; border-top:1px solid #c7d2c6; border-bottom:1px solid #c7d2c6; }
+		.number-line div { padding:16px 13px 16px 0; }
+		.number-line div+div { padding-left:16px; border-left:1px solid #c7d2c6; }
+		.number-line strong { display:block; color:var(--forest); font:600 1.85rem/1.15 'Playfair Display',serif; }
+		.number-line span { color:var(--muted); font-size:.74rem; }
+
+		.feature-slide { background:var(--paper); }
+		.slide-heading { display:flex; justify-content:space-between; align-items:end; gap:30px; margin-bottom:35px; }
+		.slide-heading p { max-width:440px; margin:0; color:var(--muted); }
+		.feature-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+		.feature-card { min-width:0; display:flex; flex-direction:column; border-top:3px solid var(--card-accent,var(--gold)); background:#f6f3eb; }
+		.feature-image { display:block; width:100%; height:205px; object-fit:cover; background:#e3e5dc; }
+		.feature-copy { flex:1; padding:18px 17px 20px; }
+		.feature-index { display:block; margin-bottom:13px; color:#877955; font-size:.68rem; font-weight:700; letter-spacing:.12em; }
+		.feature-copy h3 { font:600 1.25rem/1.15 'Playfair Display',serif; }
+		.feature-copy p { margin:0; color:var(--muted); font-size:.82rem; line-height:1.65; }
+		.feature-link { display:inline-block; margin-top:14px; color:var(--forest); font-size:.78rem; font-weight:700; border-bottom:1px solid #a5b5a3; }
+
+		.impact-slide { color:var(--paper); background:var(--forest); }
+		.impact-slide h2 { color:var(--paper); }
+		.impact-slide .lead { color:#d4dfd5; }
+		.impact-layout { display:grid; grid-template-columns:.83fr 1.17fr; gap:56px; align-items:start; }
+		.impact-stats { display:grid; grid-template-columns:repeat(2,1fr); margin-top:25px; border-top:1px solid rgba(255,255,255,.22); }
+		.impact-stats div { padding:20px 12px 20px 0; border-bottom:1px solid rgba(255,255,255,.22); }
+		.impact-stats div:nth-child(even) { padding-left:16px; border-left:1px solid rgba(255,255,255,.22); }
+		.impact-stats strong { display:block; color:#f1ca79; font:600 2.4rem/1.1 'Playfair Display',serif; }
+		.impact-stats span { color:#d4dfd5; font-size:.77rem; }
+		.impact-photo { display:grid; grid-template-columns:1.15fr .85fr; grid-template-rows:190px 190px; gap:10px; }
+		.impact-photo img { width:100%; height:100%; object-fit:cover; }
+		.impact-photo img:first-child { grid-row:span 2; }
+		.data-note { margin-top:13px; color:#b9c9bc; font-size:.7rem; }
+
+		.food-slide { background:#f1e8db; }
+		.food-layout { display:grid; grid-template-columns:.94fr 1.06fr; align-items:center; gap:58px; }
+		.food-image { position:relative; min-height:500px; background:#d7cbb7; }
+		.food-image img:first-child { width:100%; height:500px; object-fit:cover; }
+		.food-image img:last-child { position:absolute; right:-28px; bottom:22px; width:34%; aspect-ratio:1; object-fit:cover; border:7px solid #f1e8db; }
+		.food-steps { display:grid; grid-template-columns:repeat(2,1fr); margin-top:24px; border-top:1px solid #d3c5b2; }
+		.food-steps div { padding:13px 12px 13px 0; border-bottom:1px solid #d3c5b2; }
+		.food-steps div:nth-child(even) { padding-left:13px; border-left:1px solid #d3c5b2; }
+		.food-steps b { display:block; margin-bottom:3px; color:var(--forest); font-size:.8rem; }
+		.food-steps span { color:var(--muted); font-size:.72rem; }
+
+		.education-slide { background:#e5eff0; }
+		.education-grid { display:grid; grid-template-columns:.92fr 1.08fr; align-items:center; gap:55px; }
+		.education-visual { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+		.education-visual img { width:100%; aspect-ratio:1.03; object-fit:cover; background:#fff; }
+		.education-visual img:first-child { grid-column:span 2; aspect-ratio:1.9; }
+		.education-copy p { color:var(--muted); }
+		.education-points { display:grid; grid-template-columns:1fr 1fr; gap:0 16px; margin-top:24px; border-top:1px solid #c5d5d4; }
+		.education-points div { padding:12px 0; border-bottom:1px solid #c5d5d4; color:#4e645f; font-size:.8rem; }
+		.education-points strong { display:block; color:var(--forest); }
+
+		.environment-slide { background:#edf0e4; }
+		.environment-layout { display:grid; grid-template-columns:1.06fr .94fr; align-items:center; gap:54px; }
+		.environment-visual { display:grid; grid-template-columns:repeat(2,1fr); gap:9px; }
+		.environment-visual img { width:100%; height:190px; object-fit:cover; background:#d8dfd2; }
+		.environment-visual img:first-child { grid-column:span 2; height:270px; }
+		.environment-copy p { color:var(--muted); }
+		.environment-points { margin-top:21px; border-top:1px solid #cbd2c3; }
+		.environment-points div { padding:12px 0; border-bottom:1px solid #cbd2c3; }
+		.environment-points strong { display:block; color:var(--forest); font-size:.86rem; }
+		.environment-points span { color:var(--muted); font-size:.76rem; }
+
+		.field-slide { background:var(--paper); }
+		.field-grid { display:grid; grid-template-columns:repeat(12,1fr); grid-auto-rows:145px; gap:11px; margin-top:28px; }
+		.field-card { position:relative; grid-column:span 3; overflow:hidden; background:#d8ddd5; }
+		.field-card:nth-child(1),.field-card:nth-child(6) { grid-column:span 6; grid-row:span 2; }
+		.field-card:nth-child(4),.field-card:nth-child(8) { grid-column:span 4; }
+		.field-card img { width:100%; height:100%; object-fit:cover; transition:transform .45s; }
+		.field-card:hover img { transform:scale(1.035); }
+		.field-card figcaption { position:absolute; inset:auto 0 0; padding:30px 13px 12px; color:#fff; background:linear-gradient(transparent,rgba(14,32,26,.82)); font-size:.76rem; font-weight:600; }
+
+		.team-slide { background:#e9e3d7; }
+		.team-layout { display:grid; grid-template-columns:.85fr 1.15fr; gap:62px; align-items:center; }
+		.team-portrait { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+		.team-portrait img { width:100%; aspect-ratio:1; object-fit:cover; background:#d4d1c8; }
+		.team-portrait img:first-child { grid-column:span 2; grid-row:span 2; }
+		.team-copy p { color:var(--muted); }
+		.team-list { display:grid; grid-template-columns:repeat(2,1fr); margin-top:20px; border-top:1px solid #d0c7b8; }
+		.team-list span { padding:9px 10px 9px 0; border-bottom:1px solid #d0c7b8; color:#59645c; font-size:.78rem; }
+		.team-list span:nth-child(even) { padding-left:12px; border-left:1px solid #d0c7b8; }
+
+		.closing-slide { min-height:560px; color:var(--paper); background:var(--forest-dark); }
+		.closing-layout { display:grid; grid-template-columns:1fr .8fr; gap:60px; align-items:center; }
+		.closing-slide h2 { color:var(--paper); }
+		.closing-slide .lead { color:#d4dfd5; }
+		.closing-image { width:100%; height:360px; object-fit:cover; }
+		.link-row { display:flex; flex-wrap:wrap; gap:9px; margin-top:22px; }
+		.link-row a { display:inline-flex; padding:9px 12px; border:1px solid rgba(255,255,255,.32); color:#f4d991; font-size:.75rem; font-weight:700; }
+		.link-row a:hover { color:var(--forest-dark); background:#f2d28e; }
+
+		.site-footer { padding:45px 0 22px; color:#d6ded4; background:var(--forest); }
+		.footer-inner { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:44px; margin-bottom:29px; }
+		.footer-brand .brand { margin-bottom:13px; color:var(--paper); }
+		.footer-brand p { max-width:360px; margin:0; color:#aab9ac; font-size:.83rem; }
+		.footer-title { margin:0 0 15px; color:var(--paper); font-size:.93rem; }
+		.footer-links { margin:0; padding:0; list-style:none; }
+		.footer-links li { margin-bottom:8px; }
+		.footer-links a { color:#aab9ac; font-size:.82rem; }
+		.footer-links a:hover { color:var(--gold); }
+		.footer-bottom { padding-top:16px; border-top:1px solid rgba(255,255,255,.12); color:#aab9ac; text-align:center; font-size:.77rem; }
+		.footer-bottom p { margin:0; }
+
+		.deck-controls { position:fixed; right:22px; bottom:18px; z-index:45; display:flex; align-items:center; gap:6px; padding:6px; border:1px solid rgba(31,70,60,.14); background:rgba(255,250,242,.95); box-shadow:0 8px 24px rgba(31,46,36,.14); backdrop-filter:blur(12px); }
+		.deck-controls button { display:grid; place-items:center; min-width:37px; height:36px; padding:0 9px; border:0; background:transparent; color:var(--forest); cursor:pointer; font-weight:700; }
+		.deck-controls button:hover { background:#e8eee3; }
+		.deck-controls .deck-count { min-width:56px; color:var(--muted); font-size:.72rem; text-align:center; }
+		.deck-controls .deck-start { width:auto; gap:7px; border-left:1px solid var(--line); padding-left:12px; font-size:.74rem; }
+		.slide-dots { position:fixed; top:50%; right:17px; z-index:40; display:grid; gap:8px; transform:translateY(-50%); }
+		.slide-dots button { width:7px; height:7px; padding:0; border:0; border-radius:50%; background:#9eaa9e; cursor:pointer; transition:transform .2s,background .2s; }
+		.slide-dots button[aria-current="true"] { transform:scale(1.5); background:var(--gold); }
+		body.presenting { overflow:hidden; }
+		body.presenting .site-header,body.presenting .site-footer { display:none; }
+		body.presenting .slide { display:none; min-height:100svh; height:100svh; padding:42px 0 94px; overflow:auto; }
+		body.presenting .slide.is-current { display:flex; }
+		body.presenting .deck-controls { right:50%; bottom:13px; transform:translateX(50%); }
+		body.presenting .slide-dots { right:12px; }
+		body.presenting .slide-dots button { width:6px; height:6px; }
+		.menu-open { display:none; }
+
+		@media(max-width:1000px) {
+			.main-nav { gap:16px; }
+			.nav-link { font-size:.82rem; }
+			.overview-grid,.impact-layout,.food-layout,.education-grid,.environment-layout,.team-layout,.closing-layout { gap:34px; }
+			.feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+			.field-grid { grid-auto-rows:120px; }
+		}
+		@media(max-width:760px) {
+			.wrap { width:min(100% - 36px,620px); }
+			.header-inner { position:relative; min-height:72px; gap:12px; }
+			.menu-toggle { display:grid; flex:0 0 auto; }
+			.main-nav { display:none; position:absolute; top:100%; left:0; right:0; z-index:55; align-items:stretch; gap:0; padding:7px; border:1px solid var(--line); background:var(--paper); box-shadow:0 12px 30px rgba(31,70,60,.15); }
+			.main-nav.is-open { display:flex; flex-direction:column; }
+			.main-nav>.nav-link,.main-nav>.nav-item { width:100%; }
+			.main-nav>.nav-link,.main-nav>.nav-item>.nav-link { min-height:43px; padding:9px 11px; display:flex; justify-content:space-between; align-items:center; }
+			.main-nav .nav-link.active::after { display:none; }
+			.dropdown { position:static; min-width:0; transform:none; margin:0 5px 7px; box-shadow:none; }
+			.slide { min-height:0; padding:65px 0; }
+			.hero-slide { min-height:calc(100svh - 72px); padding:48px 0; }
+			.hero-content { width:100%; }
+			.hero-image img { object-position:58% center; }
+			.hero-image::after { background:linear-gradient(90deg,rgba(16,43,35,.93),rgba(22,55,46,.68)); }
+			h1 { font-size:clamp(3rem,13vw,4.7rem); }
+			h2 { font-size:clamp(2.15rem,9vw,3.2rem); }
+			.hero-content .lead,.lead { font-size:.98rem; }
+			.hero-meta div { min-width:33.3%; padding-right:10px; }
+			.hero-meta strong { font-size:1.2rem; }
+			.overview-grid,.impact-layout,.food-layout,.education-grid,.environment-layout,.team-layout,.closing-layout { grid-template-columns:1fr; gap:28px; }
+			.overview-photo { min-height:330px; order:-1; }
+			.number-line { grid-template-columns:repeat(2,1fr); }
+			.number-line div:nth-child(3) { padding-left:0; border-left:0; border-top:1px solid #c7d2c6; }
+			.number-line div:nth-child(4) { border-top:1px solid #c7d2c6; }
+			.slide-heading { display:block; margin-bottom:25px; }
+			.slide-heading p { margin-top:10px; }
+			.feature-grid { grid-template-columns:1fr 1fr; gap:9px; }
+			.feature-image { height:145px; }
+			.feature-copy { padding:13px 12px 15px; }
+			.feature-copy h3 { font-size:1.08rem; }
+			.feature-copy p { font-size:.75rem; }
+			.impact-photo { grid-template-rows:150px 150px; }
+			.food-image { min-height:370px; }
+			.food-image img:first-child { height:370px; }
+			.food-image img:last-child { right:-8px; width:33%; border-width:5px; }
+			.education-visual { max-width:500px; }
+			.environment-visual img { height:145px; }
+			.environment-visual img:first-child { height:210px; }
+			.field-grid { grid-template-columns:repeat(2,minmax(0,1fr)); grid-auto-rows:125px; gap:7px; }
+			.field-card,.field-card:nth-child(4),.field-card:nth-child(8) { grid-column:span 1; }
+			.field-card:nth-child(1),.field-card:nth-child(6) { grid-column:span 2; grid-row:span 2; }
+			.field-card figcaption { font-size:.7rem; }
+			.team-portrait { max-width:480px; }
+			.closing-image { height:260px; }
+			.footer-inner { grid-template-columns:1fr 1fr; gap:23px; }
+			.footer-brand { grid-column:1/-1; }
+			.slide-dots { display:none; }
+			.deck-controls { right:50%; bottom:10px; transform:translateX(50%); gap:2px; padding:5px; }
+			.deck-controls button { min-width:34px; height:34px; padding:0 7px; }
+			.deck-controls .deck-start { padding-left:8px; }
+			body.presenting .slide { padding:30px 0 88px; }
+		}
+		@media(max-width:430px) {
+			.wrap { width:calc(100% - 28px); }
+			.brand { gap:8px; font-size:1.04rem; }
+			.logo-icon { width:39px; height:39px; }
+			.feature-grid { grid-template-columns:1fr; }
+			.feature-card { display:grid; grid-template-columns:38% 1fr; min-height:150px; }
+			.feature-image { height:100%; min-height:150px; }
+			.feature-copy { padding:14px 12px; }
+			.feature-index { margin-bottom:8px; }
+			.feature-link { margin-top:8px; }
+			.impact-stats strong { font-size:2rem; }
+			.food-steps { grid-template-columns:1fr; }
+			.food-steps div:nth-child(even) { padding-left:0; border-left:0; }
+			.education-points { grid-template-columns:1fr; }
+			.team-list { grid-template-columns:1fr; }
+			.team-list span:nth-child(even) { padding-left:0; border-left:0; }
+			.footer-inner { grid-template-columns:1fr; }
+			.footer-brand { grid-column:auto; }
+			.deck-controls .deck-start span { display:none; }
+		}
+		/* GALERI */
+		.galeri-slide { align-items:flex-start; background:var(--cream); }
+		.galeri-tabs { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 28px; }
+		.galeri-tab { display:inline-flex; align-items:center; gap:8px; padding:11px 22px; border:1px solid var(--line); border-radius:999px; background:var(--paper); color:var(--forest); font-size:.86rem; font-weight:700; cursor:pointer; transition:background .25s,color .25s,border-color .25s; }
+		.galeri-tab:hover { border-color:var(--gold); }
+		.galeri-tab.active { background:var(--forest); border-color:var(--forest); color:var(--paper); }
+		.galeri-masonry { columns:3 240px; column-gap:14px; }
+		.galeri-item { break-inside:avoid; margin:0 0 14px; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:var(--paper); box-shadow:0 8px 22px rgba(31,70,60,.1); cursor:zoom-in; transition:transform .3s,box-shadow .3s; }
+		.galeri-item:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(31,70,60,.18); }
+		.galeri-item img { width:100%; height:auto; display:block; }
+		.galeri-empty { padding:52px 24px; border:1px dashed var(--line); border-radius:16px; background:var(--paper); text-align:center; color:var(--muted); }
+		.galeri-empty span { display:grid; place-items:center; width:76px; height:76px; margin:0 auto 16px; border-radius:50%; background:rgba(232,163,58,.16); color:var(--gold); font-size:1.8rem; }
+		.galeri-empty h3 { margin-bottom:8px; }
+		.galeri-overlay { position:fixed; inset:0; z-index:200; display:flex; align-items:center; justify-content:center; padding:24px; background:rgba(16,43,35,.92); backdrop-filter:blur(8px); opacity:0; visibility:hidden; transition:opacity .3s,visibility .3s; }
+		.galeri-overlay.active { opacity:1; visibility:visible; }
+		.galeri-close { position:absolute; top:20px; right:20px; width:44px; height:44px; padding:0; display:grid; place-items:center; border:1px solid rgba(255,250,242,.4); border-radius:50%; background:rgba(255,250,242,.12); color:var(--paper); font-size:1rem; cursor:pointer; transition:background .25s,color .25s; }
+		.galeri-close:hover { background:var(--gold); border-color:var(--gold); color:#2b2d25; }
+		.galeri-lightbox-img { max-width:min(1100px,92vw); max-height:84vh; border-radius:14px; object-fit:contain; box-shadow:0 24px 60px rgba(0,0,0,.45); }
+		@media(max-width:900px) { .galeri-masonry { columns:2 160px; } }
+		@media(max-width:560px) { .galeri-masonry { columns:1; } }
+		@media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; } }
+	</style>
+</head>
+<body>
+	<header class="site-header">
+		<div class="wrap header-inner">
+			<a href="index.html" class="brand"><span class="logo-icon"><img src="logokkn-bulat.png" alt="Logo KKN Pasirjati"></span><span>KKN Pasirjati 2</span></a>
+			<button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Buka menu navigasi"><span aria-hidden="true">☰</span></button>
+			<nav class="main-nav" id="navLinks" aria-label="Navigasi utama">
+				<a href="index.html" class="nav-link">Home</a><a href="profilekkn.html" class="nav-link">Profile KKN</a><a href="profiledesa.html" class="nav-link">Profile Desa</a>
+				<div class="nav-item" id="programNavItem"><a href="program.html" class="nav-link has-dropdown" id="programToggle" aria-haspopup="true" aria-expanded="false">Program <i class="chevron" aria-hidden="true">▾</i></a>
+					<div class="dropdown" id="programDropdown" role="menu">
+						<a href="program.html#home" role="menuitem">Program KKN</a><a href="resepnuget.html" role="menuitem">Resep Nugget</a><a href="pengenalanemosi.html" role="menuitem">Pengenalan Emosi</a><a href="pakonel.html" role="menuitem">Pakonel</a><a href="kandangpintar.html" role="menuitem">Kandang Pintar</a><a href="banksampah.html" role="menuitem">Bank Sampah</a><a href="persentasi.html" role="menuitem" aria-current="page">Presentasi</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<main id="presentationDeck">
+		<section class="slide hero-slide is-current" id="pembuka" data-title="Pembuka">
+			<div class="hero-image"><img src="gedungumb.jpeg" alt="Gedung Universitas Muhammadiyah Bandung"></div>
+			<div class="wrap"><div class="hero-content">
+				<div class="slide-number">Presentasi lapangan · 2026</div>
+				<h1>Mengabdi.<br><em>Berinovasi.</em><br>Bertumbuh bersama.</h1>
+				<p class="lead">Rangkuman perjalanan Kuliah Kerja Nyata Pasirjati II: mengenali kebutuhan wilayah, bekerja bersama warga, lalu menghadirkan program yang dekat dengan kehidupan sehari-hari.</p>
+				<div class="hero-meta"><div><strong>RW 10</strong><span>Kelurahan Pasirjati</span></div><div><strong>03—29</strong><span>Agustus 2026</span></div><div><strong>UM Bandung</strong><span>Tim KKN Pasirjati II</span></div></div>
+				<div class="hero-actions"><a class="button button-light" href="#ikhtisar">Mulai presentasi <span aria-hidden="true">↓</span></a><button class="button" type="button" data-start-presentation>Mode presentasi <span aria-hidden="true">⛶</span></button></div>
+			</div></div>
+		</section>
+
+		<section class="slide overview-slide" id="ikhtisar" data-title="Ikhtisar">
+			<div class="wrap overview-grid">
+				<div class="overview-copy"><div class="slide-number">01 · Konteks pengabdian</div><h2>Berangkat dari wilayah, bergerak bersama warga.</h2>
+					<p>Kegiatan berpusat di RW 10, Kelurahan Pasirjati, Kota Bandung. Rangkaian kerja memadukan pendataan pendidikan, kesehatan keluarga, edukasi anak, pengelolaan lingkungan, serta kolaborasi dengan unsur masyarakat.</p>
+					<div class="number-line"><div><strong>19</strong><span>Kegiatan terdokumentasi</span></div><div><strong>7</strong><span>Mitra / unsur warga</span></div><div><strong>94</strong><span>Paket PMT dibagikan</span></div><div><strong>RW 10</strong><span>Wilayah fokus</span></div></div>
+				</div>
+				<div class="overview-photo"><img src="profiledesa/desa.jpeg" alt="Suasana lingkungan Kelurahan Pasirjati"><img src="persentasi/rw.jpeg" alt="Survei dan pertemuan tim dengan wilayah RW 10"></div>
+			</div>
+		</section>
+
+		<section class="slide feature-slide" id="program-utama" data-title="Program utama">
+			<div class="wrap">
+				<div class="slide-number">02 · Program unggulan</div>
+				<div class="slide-heading"><h2>Empat fokus, satu kerja kolaboratif.</h2><p>Program merespons kebutuhan pendidikan, kesehatan, lingkungan, dan tumbuh kembang anak melalui kegiatan serta media yang dapat digunakan bersama masyarakat.</p></div>
+				<div class="feature-grid">
+					<article class="feature-card" style="--card-accent:#4f7b67"><img class="feature-image" src="persentasi/ats.jpeg" alt="Kegiatan pendataan dan verifikasi ATS"><div class="feature-copy"><span class="feature-index">PENDIDIKAN · ATS</span><h3>Pendataan & verifikasi</h3><p>Kunjungan dan wawancara bersama pengurus wilayah untuk mengenali kondisi Anak Tidak Sekolah.</p><a class="feature-link" href="program.html#impact">Lihat ringkasan ATS</a></div></article>
+					<article class="feature-card" style="--card-accent:#d9a447"><img class="feature-image" src="persentasi/pos.jpeg" alt="Distribusi nugget PMT kepada balita di Posyandu 10A"><div class="feature-copy"><span class="feature-index">KESEHATAN · PMT</span><h3>Nugget singkong & nila</h3><p>Olahan pangan lokal diproduksi dan dibagikan di Posyandu 10A; dokumentasi mencatat 94 paket PMT.</p><a class="feature-link" href="resepnuget.html">Lihat resep</a></div></article>
+					<article class="feature-card" style="--card-accent:#729c68"><img class="feature-image" src="persentasi/bnk.jpeg" alt="Diskusi program Bank Sampah dan Maggot"><div class="feature-copy"><span class="feature-index">LINGKUNGAN</span><h3>Bank Sampah & Maggot</h3><p>Pemilahan, pencatatan tabungan sampah, penguatan administrasi, dan diskusi pengolahan organik.</p><a class="feature-link" href="banksampah.html">Lihat rekap</a></div></article>
+					<article class="feature-card" style="--card-accent:#a47dc1"><img class="feature-image" src="persentasi/ves.jpeg" alt="Anak-anak mengikuti Festival Ceria"><div class="feature-copy"><span class="feature-index">EDUKASI · ANAK</span><h3>Festival Ceria</h3><p>Pengenalan emosi, praktik APE, aktivitas kreatif, dan edukasi karakter bersama anak-anak.</p><a class="feature-link" href="pengenalanemosi.html">Jelajahi Pengenalan Emosi</a></div></article>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide impact-slide" id="data-dampak" data-title="Data dampak">
+			<div class="wrap impact-layout">
+				<div><div class="slide-number">03 · Data & tindak lanjut</div><h2>Mengubah pendataan menjadi langkah.</h2><p class="lead">Pendataan ATS dilakukan melalui kunjungan serta verifikasi lapangan. Rekap program mencatat 31 data awal, termasuk status validasi dan tindak lanjut kembali ke sekolah.</p>
+					<div class="impact-stats"><div><strong>31</strong><span>Total data awal</span></div><div><strong>21</strong><span>Terverifikasi valid</span></div><div><strong>7</strong><span>Belum terverifikasi</span></div><div><strong>3</strong><span>Kembali sekolah</span></div></div>
+					<p class="data-note">Angka mengikuti ringkasan ATS pada halaman Program KKN. BPB: Belum Pernah Belajar · DO: putus sekolah · LTM: lulus tidak melanjutkan.</p>
+				</div>
+				<div class="impact-photo"><img src="persentasi/verifikasiats.jpeg" alt="Proses verifikasi lapangan data ATS"><img src="persentasi/surveydesa.jpeg" alt="Tim melakukan survei wilayah"><img src="persentasi/diskusi.jpeg" alt="Diskusi program dengan pengurus wilayah"></div>
+			</div>
+		</section>
+
+		<section class="slide food-slide" id="pmt" data-title="PMT Nugget">
+			<div class="wrap food-layout">
+				<div class="food-image"><img src="resep/naget.jpeg" alt="Nugget singkong dan ikan nila hasil olahan program PMT"><img src="persentasi/packing.jpeg" alt="Persiapan pengemasan produk nugget"></div>
+				<div><div class="slide-number">04 · Pangan lokal & kesehatan</div><h2>Dari bahan lokal ke meja Posyandu.</h2><p class="lead">Nugget memadukan singkong dan ikan nila sebagai makanan tambahan. Prosesnya mencakup persiapan, penghalusan, pencampuran, pematangan, pembentukan, pelapisan, penyimpanan, dan distribusi.</p>
+					<div class="food-steps"><div><b>01 · Persiapan</b><span>Kupas, cuci, potong, dan kukus singkong.</span></div><div><b>02 · Olah bahan</b><span>Haluskan ikan, bumbu, wortel, dan daun bawang.</span></div><div><b>03 · Campur & kukus</b><span>Satukan bahan, bumbui, lalu matangkan adonan.</span></div><div><b>04 · Bentuk & bagikan</b><span>Isi, balur, simpan, dan distribusikan PMT.</span></div></div>
+					<div class="hero-actions"><a class="feature-link" href="resepnuget.html">Buka halaman resep lengkap →</a></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide education-slide" id="edukasi-anak" data-title="Edukasi anak">
+			<div class="wrap education-grid">
+				<div class="education-visual"><img src="program/pakonel%201.jpeg" alt="Sampul media Papan Konstruksi Flanel PAKONEL"><img src="program/POSTER%20SENANG.jpeg" alt="Poster emosi senang"><img src="program/POSTER%20SEDIH.jpeg" alt="Poster emosi sedih"></div>
+				<div class="education-copy"><div class="slide-number">05 · Media belajar anak</div><h2>Belajar lewat bentuk, rasa, dan cerita.</h2><p class="lead">Dua kegiatan menggunakan pendekatan aktif dan visual: anak menyusun media konstruksi flanel, sekaligus belajar mengenali perasaan dan bercerita dengan aman.</p>
+					<div class="education-points"><div><strong>PAKONEL</strong>Papan konstruksi flanel ukuran 40 × 60 cm dengan bentuk geometri dan perekat Velcro.</div><div><strong>Usia sasaran</strong>Media manipulatif dirancang untuk anak usia dini sekitar 4–5 tahun.</div><div><strong>Kenali emosi</strong>Poster senang, sedih, marah, takut, dan terkejut sebagai pemantik percakapan.</div><div><strong>Ruang eksplorasi</strong>Motorik halus, pengenalan bentuk, kreativitas, dan ekspresi diri.</div></div>
+					<div class="hero-actions"><a class="feature-link" href="pakonel.html">Lihat dokumentasi PAKONEL →</a><a class="feature-link" href="pengenalanemosi.html">Lihat materi emosi →</a></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide environment-slide" id="lingkungan" data-title="Lingkungan">
+			<div class="wrap environment-layout">
+				<div class="environment-copy"><div class="slide-number">06 · Ekonomi sirkular</div><h2>Sampah tercatat, lingkungan terawat.</h2><p class="lead">Kerja lingkungan menggabungkan pemilahan sampah, administrasi bank sampah, pencatatan tabungan, serta diskusi budidaya Maggot BSF dan pemanfaatan hasilnya.</p>
+					<div class="environment-points"><div><strong>Pilah berdasarkan jenis</strong><span>Memudahkan proses daur ulang dan pengelolaan material.</span></div><div><strong>Catat tabungan dengan tertib</strong><span>Format rekap bulanan dan tahunan untuk sampah maupun uang.</span></div><div><strong>Manfaatkan sampah organik</strong><span>Diskusi budidaya maggot dan penggunaan output organik.</span></div></div>
+					<div class="hero-actions"><a class="feature-link" href="banksampah.html">Buka halaman rekap Bank Sampah →</a></div>
+				</div>
+				<div class="environment-visual"><img src="program/banksampah%201.jpeg" alt="Sampul rekap tabungan sampah dan uang RW 10"><img src="program/banksampah%202.jpeg" alt="Format rekap tabungan sampah"><img src="program/banksampah%203.jpeg" alt="Format rekap tabungan uang"></div>
+			</div>
+		</section>
+
+		<section class="slide field-slide" id="perjalanan" data-title="Perjalanan lapangan">
+			<div class="wrap"><div class="slide-number">07 · Perjalanan lapangan</div><div class="slide-heading"><h2>Mendengar, bekerja, dan merayakan bersama.</h2><p>Dokumentasi lapangan memperlihatkan proses kolaborasi dari survei awal hingga penutupan kegiatan di RW 10.</p></div>
+				<div class="field-grid">
+					<figure class="field-card"><img src="persentasi/pelepasan.jpeg" alt="Pelepasan peserta KKN"><figcaption>Pelepasan dan pembekalan KKN</figcaption></figure>
+					<figure class="field-card"><img src="persentasi/lpm.jpeg" alt="Pembukaan KKN dan kerja bakti"><figcaption>Pembukaan & kerja bakti</figcaption></figure>
+					<figure class="field-card"><img src="persentasi/koleb.jpeg" alt="Kolaborasi bersama Karang Taruna"><figcaption>Kolaborasi pemuda</figcaption></figure>
+					<figure class="field-card"><img src="persentasi/pemilihanbnksampah.jpeg" alt="Pemilahan sampah bersama warga"><figcaption>Pemilahan sampah</figcaption></figure>
+					<figure class="field-card"><img src="persentasi/agus.jpeg" alt="Kegiatan KKN bersama warga"><figcaption>Aktivitas bersama masyarakat</figcaption></figure>
+					<figure class="field-card"><img src="persentasi/perpisahan.jpeg" alt="Perpisahan bersama RW dan mitra"><figcaption>Apresiasi dan penutupan</figcaption></figure>
+					<figure class="field-card"><img src="persentasi/naget.jpeg" alt="Produk nugget singkong dan ikan nila"><figcaption>Produk PMT lokal</figcaption></figure>
+					<figure class="field-card"><img src="persentasi/pmt.jpeg" alt="Kegiatan pemberian makanan tambahan"><figcaption>Pelayanan kesehatan</figcaption></figure>
+					<figure class="field-card"><img src="persentasi/pos.jpeg" alt="Penyaluran PMT di Posyandu"><figcaption>Distribusi di Posyandu 10A</figcaption></figure>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide team-slide" id="tim" data-title="Tim & lokasi">
+			<div class="wrap team-layout">
+				<div class="team-portrait"><img src="profilekkn/3.jpeg" alt="Anggota tim KKN"><img src="profilekkn/1.jpeg" alt="Dosen pembimbing lapangan"><img src="profilekkn/2%20.jpeg" alt="Koordinator desa"><img src="profilekkn/7.jpeg" alt="Anggota tim divisi acara"><img src="profilekkn/10.jpeg" alt="Anggota tim divisi humas"></div>
+				<div class="team-copy"><div class="slide-number">08 · Tim & kolaborasi</div><h2>Kerja lintas peran, tumbuh bersama mitra.</h2><p class="lead">Kegiatan dijalankan oleh Tim KKN Pasirjati II Universitas Muhammadiyah Bandung bersama perangkat kelurahan, RW/RT, Posyandu, Bank Sampah, Karang Taruna, dan masyarakat.</p><div class="team-list"><span>Dosen pembimbing lapangan</span><span>Koordinator desa</span><span>Divisi acara & edukasi</span><span>Divisi logistik</span><span>Divisi humas</span><span>Divisi publikasi & dokumentasi</span></div></div>
+			</div>
+		</section>
+
+		<section class="slide galeri-slide" id="galeri" data-title="Galeri">
+			<div class="wrap">
+				<div class="slide-number">09 · Galeri program</div>
+				<div class="slide-heading"><h2>Galeri dokumentasi program.</h2><p>Foto media dan kegiatan program kerja KKN Pasirjati II: PAKONEL, kandang pintar hewan, pengenalan emosi, pendataan ATS, bank sampah, dan plang gang RW 10, serta arsip dokumentasi kegiatan dari slide presentasi.</p></div>
+				<div class="galeri-tabs">
+					<button class="galeri-tab active" type="button" data-tab="foto">Foto</button>
+					<button class="galeri-tab" type="button" data-tab="video">Video</button>
+				</div>
+				<div id="galeriContent"></div>
+			</div>
+		</section>
+
+		<section class="slide closing-slide" id="penutup" data-title="Penutup">
+			<div class="wrap closing-layout"><div><div class="slide-number">10 · Penutup</div><h2>Perubahan besar tumbuh dari kerja bersama.</h2><p class="lead">Terima kasih kepada Kelurahan Pasirjati, RW 10, seluruh mitra, dan masyarakat yang telah menjadi bagian dari perjalanan KKN Pasirjati II 2026.</p><div class="link-row"><a href="program.html">Ringkasan Program</a><a href="profilekkn.html">Tim KKN</a><a href="profiledesa.html">Profil Desa</a><a href="resepnuget.html">Resep Nugget</a></div></div><img class="closing-image" src="persentasi/perpisahan.jpeg" alt="Penutupan dan perpisahan bersama warga RW 10"></div>
+		</section>
+	</main>
+
+	<footer class="site-footer"><div class="wrap"><div class="footer-inner">
+		<div class="footer-brand"><a href="index.html" class="brand"><span class="logo-icon"><img src="logokkn-bulat.png" alt="Logo KKN Pasirjati"></span><span>KKN Pasirjati 2</span></a><p>Universitas Muhammadiyah Bandung · 2026<br>Mengabdi, berinovasi, dan bertumbuh bersama Kelurahan Pasirjati.</p></div>
+		<div><h2 class="footer-title">Navigasi</h2><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="profilekkn.html">Profile KKN</a></li><li><a href="profiledesa.html">Profile Desa</a></li><li><a href="program.html">Program KKN</a></li></ul></div>
+		<div><h2 class="footer-title">Program</h2><ul class="footer-links"><li><a href="resepnuget.html">Resep Nugget</a></li><li><a href="pengenalanemosi.html">Pengenalan Emosi</a></li><li><a href="pakonel.html">PAKONEL</a></li><li><a href="kandangpintar.html">Kandang Pintar</a></li><li><a href="banksampah.html">Bank Sampah</a></li></ul></div>
+	</div><div class="footer-bottom"><p>© 2026 KKN Pasirjati 02/2026 · Universitas Muhammadiyah Bandung</p></div></div></footer>
+
+	<!-- LIGHTBOX GALERI -->
+	<div class="galeri-overlay" id="galeriLightbox" aria-hidden="true">
+		<button class="galeri-close" id="galeriClose" type="button" aria-label="Tutup galeri"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+		<img class="galeri-lightbox-img" id="galeriLightboxImg" src="" alt="Dokumentasi program KKN">
+	</div>
+
+	<nav class="slide-dots" id="slideDots" aria-label="Navigasi bagian presentasi"></nav>
+	<div class="deck-controls" aria-label="Kontrol presentasi"><button id="previousSlide" type="button" aria-label="Bagian sebelumnya" title="Bagian sebelumnya">←</button><span class="deck-count" id="deckCount">01 / 11</span><button id="nextSlide" type="button" aria-label="Bagian berikutnya" title="Bagian berikutnya">→</button><button class="deck-start" id="presentationToggle" type="button" aria-label="Mulai mode presentasi" title="Mulai mode presentasi"><span>Presentasi</span><b aria-hidden="true">⛶</b></button></div>
+
+	<script>
+		const programItem = document.getElementById('programNavItem');
+		const programToggle = document.getElementById('programToggle');
+		const dropdown = document.getElementById('programDropdown');
+		const menuToggle = document.getElementById('menuToggle');
+		const nav = document.getElementById('navLinks');
+		const slides = [...document.querySelectorAll('.slide')];
+		const dots = document.getElementById('slideDots');
+		const count = document.getElementById('deckCount');
+		const presentationToggle = document.getElementById('presentationToggle');
+		let currentSlide = 0;
+		let presenting = false;
+
+		const closeDropdown = () => {
+			programItem.classList.remove('open');
+			dropdown.classList.remove('open');
+			programToggle.setAttribute('aria-expanded', 'false');
+		};
+		programToggle.addEventListener('click', event => {
+			event.preventDefault();
+			const isOpen = programItem.classList.toggle('open');
+			dropdown.classList.toggle('open', isOpen);
+			programToggle.setAttribute('aria-expanded', String(isOpen));
+		});
+		dropdown.querySelectorAll('a').forEach(link => link.addEventListener('click', closeDropdown));
+		document.addEventListener('click', event => { if (!programItem.contains(event.target)) closeDropdown(); });
+		document.addEventListener('keydown', event => { if (event.key === 'Escape') closeDropdown(); });
+		menuToggle.addEventListener('click', () => {
+			const isOpen = nav.classList.toggle('is-open');
+			menuToggle.setAttribute('aria-expanded', String(isOpen));
+			menuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+			menuToggle.querySelector('span').textContent = isOpen ? '×' : '☰';
+		});
+		nav.querySelectorAll('a:not(.has-dropdown)').forEach(link => link.addEventListener('click', () => {
+			nav.classList.remove('is-open');
+			menuToggle.setAttribute('aria-expanded', 'false');
+			menuToggle.setAttribute('aria-label', 'Buka menu navigasi');
+			menuToggle.querySelector('span').textContent = '☰';
+		}));
+
+		const updateCurrent = index => {
+			currentSlide = Math.max(0, Math.min(slides.length - 1, index));
+			count.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+			[...dots.children].forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === currentSlide)));
+			if (presenting) slides.forEach((slide, slideIndex) => slide.classList.toggle('is-current', slideIndex === currentSlide));
+		};
+		const goToSlide = index => {
+			const target = Math.max(0, Math.min(slides.length - 1, index));
+			updateCurrent(target);
+			if (presenting) window.scrollTo({top: 0, behavior: 'smooth'});
+			else slides[target].scrollIntoView({behavior: 'smooth', block: 'start'});
+		};
+		slides.forEach((slide, index) => {
+			const dot = document.createElement('button');
+			dot.type = 'button';
+			dot.title = slide.dataset.title;
+			dot.setAttribute('aria-label', `Buka bagian ${index + 1}: ${slide.dataset.title}`);
+			dot.setAttribute('aria-current', String(index === 0));
+			dot.addEventListener('click', () => goToSlide(index));
+			dots.append(dot);
+		});
+		document.getElementById('previousSlide').addEventListener('click', () => goToSlide(currentSlide - 1));
+		document.getElementById('nextSlide').addEventListener('click', () => goToSlide(currentSlide + 1));
+		const observer = new IntersectionObserver(entries => {
+			if (presenting) return;
+			const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+			if (visible) updateCurrent(slides.indexOf(visible.target));
+		}, {threshold: [.28, .5, .72]});
+		slides.forEach(slide => observer.observe(slide));
+		const setPresentationMode = active => {
+			presenting = active;
+			document.body.classList.toggle('presenting', active);
+			presentationToggle.setAttribute('aria-label', active ? 'Keluar dari mode presentasi' : 'Mulai mode presentasi');
+			presentationToggle.querySelector('span').textContent = active ? 'Keluar' : 'Presentasi';
+			updateCurrent(currentSlide);
+			if (active) window.scrollTo({top: 0, behavior: 'instant'});
+		};
+		presentationToggle.addEventListener('click', () => setPresentationMode(!presenting));
+		document.querySelectorAll('[data-start-presentation]').forEach(button => button.addEventListener('click', () => setPresentationMode(true)));
+		document.addEventListener('keydown', event => {
+			if (event.key === 'ArrowRight' || event.key === 'PageDown') { event.preventDefault(); goToSlide(currentSlide + 1); }
+			if (event.key === 'ArrowLeft' || event.key === 'PageUp') { event.preventDefault(); goToSlide(currentSlide - 1); }
+			if (event.key === 'Home') goToSlide(0);
+			if (event.key === 'End') goToSlide(slides.length - 1);
+			if (event.key === 'Escape' && presenting) setPresentationMode(false);
+		});
+	</script>
+
+	<script>
+		(function () {
+			// Foto program (folder program/)
+			const galeriFoto = [
+				'program/pakonel 1.jpeg',
+				'program/kandang pintar hewan.jpeg',
+				'program/emosi.jpeg',
+				'program/ats1.jpeg',
+				'program/ats2.jpeg',
+				'program/ats3.jpeg',
+				'program/plang1.jpeg',
+				'program/plang2.jpeg',
+				'program/plang3.jpeg',
+				// Dokumentasi kegiatan KKN (arsip slide presentasi - folder persentasi/)
+				'persentasi/pelepasan.jpeg',
+				'persentasi/surveydesa.jpeg',
+				'persentasi/diskusi.jpeg',
+				'persentasi/rw.jpeg',
+				'persentasi/lpm.jpeg',
+				'persentasi/ats.jpeg',
+				'persentasi/pmt.jpeg',
+				'persentasi/packing.jpeg',
+				'persentasi/pos.jpeg',
+				'persentasi/ves.jpeg',
+				'persentasi/bnk.jpeg',
+				'persentasi/pemilihanbnksampah.jpeg',
+				'persentasi/naget.jpeg',
+				'persentasi/agus.jpeg',
+				'persentasi/koleb.jpeg',
+				'persentasi/perpisahan.jpeg',
+				// Arsip dokumentasi lintas program
+				'posko.jpeg',
+				'gedungumb.jpeg',
+				'profiledesa/desa.jpeg',
+				'profilekkn/week1.jpeg',
+				'profilekkn/week2.jpeg',
+				'profilekkn/week3.jpeg',
+				'profilekkn/week4.jpeg',
+				'profilekkn/buku.jpeg',
+				'profilekkn/kandang.jpeg',
+				'profilekkn/plang%20.jpeg',
+				'profilekkn/rekap%20.jpeg',
+				'profilekkn/web.jpeg',
+				'resep/naget.jpeg'
+			];
+
+			const galeriContent = document.getElementById('galeriContent');
+			const galeriOverlay = document.getElementById('galeriLightbox');
+			const galeriImg = document.getElementById('galeriLightboxImg');
+			const galeriClose = document.getElementById('galeriClose');
+			if (!galeriContent || !galeriOverlay) return;
+
+			const openGaleriLightbox = src => {
+				galeriImg.src = src;
+				galeriOverlay.classList.add('active');
+				galeriOverlay.setAttribute('aria-hidden', 'false');
+				document.body.style.overflow = 'hidden';
+			};
+
+			const closeGaleriLightbox = () => {
+				galeriOverlay.classList.remove('active');
+				galeriOverlay.setAttribute('aria-hidden', 'true');
+				galeriImg.removeAttribute('src');
+				document.body.style.overflow = '';
+			};
+
+			const renderGaleri = tab => {
+				if (tab === 'foto') {
+					galeriContent.innerHTML = '<div class="galeri-masonry">' + galeriFoto.map(src =>
+						'<figure class="galeri-item"><img src="' + src +
+						'" alt="Dokumentasi program KKN" loading="lazy"></figure>'
+					).join('') + '</div>';
+
+					galeriContent.querySelectorAll('.galeri-item img').forEach(img => {
+						img.closest('.galeri-item').addEventListener('click', () => openGaleriLightbox(img.getAttribute('src')));
+					});
+					return;
+				}
+
+				galeriContent.innerHTML = '<div class="galeri-empty">' +
+					'<span aria-hidden="true">▶</span>' +
+					'<h3>Video Dokumentasi</h3>' +
+					'<p>Video kegiatan program akan segera tersedia di sini.</p>' +
+					'</div>';
+			};
+
+			document.querySelectorAll('.galeri-tab').forEach(tab => {
+				tab.addEventListener('click', () => {
+					document.querySelectorAll('.galeri-tab').forEach(t => t.classList.remove('active'));
+					tab.classList.add('active');
+					renderGaleri(tab.dataset.tab);
+				});
+			});
+
+			if (galeriClose) galeriClose.addEventListener('click', closeGaleriLightbox);
+			galeriOverlay.addEventListener('click', event => {
+				if (event.target === galeriOverlay) closeGaleriLightbox();
+			});
+			document.addEventListener('keydown', event => {
+				if (event.key === 'Escape' && galeriOverlay.classList.contains('active')) {
+					event.stopPropagation();
+					closeGaleriLightbox();
+				}
+			}, true);
+
+			renderGaleri('foto');
+		})();
+	</script>
+</body>
+</html>
